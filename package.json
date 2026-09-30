@@ -1,0 +1,1 @@
+{"dependencies":{"postal-mime":"^2.0.0"},"devDependencies":{"@cloudflare/workers-types":"^4.20240101.0","@types/node":"^25.0.9","tsx":"^4.21.0","typescript":"^5.0.0","wrangler":"^4.59.3"},"name":"email-parser","private":true,"scripts":{"deploy":"wrangler deploy","dev":"wrangler dev","start":"wrangler dev","test:local":"tsx scripts/test-local.ts"},"version":"0.0.1"}

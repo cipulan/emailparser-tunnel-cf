@@ -1,0 +1,14 @@
+node_modules
+dist
+.wrangler
+.dev.vars
+.env
+.DS_Store
+.env.local
+
+# hermit
+.hermit
+bin
+
+# email
+*.eml
