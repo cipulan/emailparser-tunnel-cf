@@ -31,8 +31,6 @@ export default {
 
 			// Use original details if available, otherwise fall back to current email headers
 			const subject = forwarded.subject || email.subject || '(No Subject)';
-			// Ensure we don't pick up "Unknown Sender" if forwarded logic fails but we have a real sender
-			const from = forwarded.from || (email.from ? `${email.from.name} <${email.from.address}>` : '(Unknown Sender)');
 			const date = forwarded.date || '';
 
 			// Extract tunnel health details if available
@@ -45,11 +43,8 @@ export default {
 				`*ID:* ${escapeMarkdown(tunnelDetails.id)}\n` +
 				`*New status:* ${escapeMarkdown(tunnelDetails.newStatus)}`;
 
-			if (from && from !== '(Unknown Sender)') {
-				telegramMessage += `\n\n_From:_ ${escapeMarkdown(from)}`;
-			}
 			if (date) {
-				telegramMessage += `\n_Date:_ ${escapeMarkdown(date)}`;
+				telegramMessage += `\n\n_Date:_ ${escapeMarkdown(date)}`;
 			}
 
 			await sendToTelegram(telegramBotToken, telegramChatId, telegramTopicId, telegramMessage);

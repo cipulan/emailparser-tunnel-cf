@@ -31,5 +31,5 @@ persist = true
 head_sampling_rate = 1
 
 [vars]
-TELEGRAM_TOPIC_ID = "62"
+TELEGRAM_TOPIC_ID = "7"
 WA_ENABLED = "false"
